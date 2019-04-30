@@ -26,6 +26,7 @@
     3. [Password Hashing](#password-hashing)
     4. [Uploading Files](#uploading-files)
 
+
 ## Intro
 
 Now that you and your students have built an app using Flask, you might have recognized a need to store and retrieve data. You already know how to store data locally, but apps that only store data locally operate in complete isolation. For instance, if two people are using the same app, they can't see what each other adds to their local database.
