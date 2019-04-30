@@ -49,13 +49,12 @@ pip install dnspython # for mongodb connection
 pip install bcrypt # for password handling
 pip install bson # for page/post
 pip install datetime # for prettifying dates
-pip install python-dotenv # for .env variables
 ```
 
 Or all in one:
 
 ```python
-pip install flask flask-pymongo dnspython bcrypt bson datetime python-dotenv
+pip install flask flask-pymongo dnspython bcrypt bson datetime
 ```
 
 And you'll need to export these variables in the Terminal:
@@ -69,15 +68,7 @@ export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 ```
 
-To view the finished app:
-
-- First create a `.env` file with these credentials:
-```bash
-MONGO_USERNAME="admin"
-MONGO_PASSWORD="6zCs4vJtrzwkLBqL"
-```
-- Then rename the `routes.py` starter template to anything else, and rename `routes-complete.py` to `routes.py`.
-- Lastly, execute `flask run` in the Terminal as before.
+To view the finished app, execute `flask run` in the Terminal as before.
 
 > Test out how to submit an event, sign up, log in, view an event page, and log out.
 > 
