@@ -8,8 +8,8 @@
 ## Teacher Notes
 
 Notes for this build are located here:
-- [Day 1: Introduction to MongoDB](https://github.com/upperlinecode/Upperline-Content-Master-Repo/blob/master/python-teacher-guide/lecture-guides/day-9-databases-intro.md)
-- [Day 2: MongoDB Extensions](https://github.com/upperlinecode/Upperline-Content-Master-Repo/blob/master/python-teacher-guide/lecture-guides/day-10-databases-advanced.md)
+- [Day 1: Introduction to MongoDB](https://teacherhub.upperlinecode.com/day-9-databases-intro)
+- [Day 2: MongoDB Extensions](https://teacherhub.upperlinecode.com/day-11-databases-advanced)
 
 ## Demo
 
@@ -20,8 +20,6 @@ Just want to see a demo? [Click here](https://upperline-community-board.herokuap
 ## Want To Run This Code Yourself?
 
 If you've come just looking to run the demo code, this is a list of the packages you'll want to make sure you've installed. If you're using your own development environment, these should work as written.
-
-> In [ide.cs50.io](https://ide.cs50.io), you may need to add a `--user` flag at the end of each: `pip install <package> --user`. 
 
 ```python
 pip install flask
@@ -38,7 +36,12 @@ Or all in one:
 pip install flask flask-pymongo dnspython bcrypt bson datetime
 ```
 
-And you'll need to export these variables in the Terminal:
+> Depending on which code editor you use, `pip install <package>` may or may not be enough to install a package. Two additional methods you could try to ensure a package is installed are:
+>
+> - `sudo pip install <package>` can force the installation if a user has sufficient privileges
+> - `pip install <package> --user` can do the installation just for the user's account
+
+And you'll need to export these variables in the Terminal if they haven't already been saved during your environment setup:
 
 ```bash
 export FLASK_APP=main.py
@@ -57,5 +60,5 @@ To view the finished app, execute `flask run` in the Terminal.
 
 ### How'd You Make That?
 
-- [Day 1: Introduction to MongoDB](https://github.com/upperlinecode/Upperline-Content-Master-Repo/blob/master/python-teacher-guide/lecture-guides/day-9-databases-intro.md)
-- [Day 2: MongoDB Extensions](https://github.com/upperlinecode/Upperline-Content-Master-Repo/blob/master/python-teacher-guide/lecture-guides/day-10-databases-advanced.md)
+- [Day 1: Introduction to MongoDB](https://teacherhub.upperlinecode.com/day-9-databases-intro)
+- [Day 2: MongoDB Extensions](https://teacherhub.upperlinecode.com/day-11-databases-advanced)
