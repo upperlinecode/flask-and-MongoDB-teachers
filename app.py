@@ -1,20 +1,24 @@
-import os
-from app import app
+# ---- YOUR APP STARTS HERE ----
+# -- Import section --
+from flask import Flask
 from flask import render_template, request, redirect, url_for, session # added url_for, session
 import bcrypt # added for password encryption
-from bson.objectid import ObjectId # added for page/post
 from datetime import datetime # added for date formatting
-# from dotenv import load_dotenv # added for environment variables
+from flask_pymongo import PyMongo
 
-# load environment variables in .env [THIS VERSION HAS NO .ENV FILE]
-# load_dotenv()
-# store environment variables
-# USER = os.getenv("MONGO_USERNAME")
-# PASSWORD = os.getenv("MONGO_PASSWORD")
+# -- Initialization section --
+app = Flask(__name__)
 
 # set some random secret key for session
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
+app.config['MONGO_DBNAME'] = 'community-board' # name of database
+app.config['MONGO_URI'] = 'mongodb+srv://admin:6zCs4vJtrzwkLBqL@cluster0-ya1yr.mongodb.net/community-board?retryWrites=true' # Command Line Tools, Connect Instructions, Secure Database (Whitelist IP), connection method (Connect Your Application) > Copy > replace password w/ password
+# same for node.js > 3.0 and Python > 3.6
+
+mongo = PyMongo(app)
+
+# -- Routes section --
 @app.route('/')
 @app.route('/index')
 
@@ -29,22 +33,6 @@ def index():
     return render_template('events.html', events = events, message = message)
 
 
-# Sign up for MongoDB Atlas Account
-# in Terminal: pip install flask-pymongo
-# in Terminal: pip install dnspython (for +srv)
-# in Terminal: pip install bcrypt (for password handling)
-# Click on cluster name > Collections > Create Database (give database a name, give first collection a name - can be a dummy name)
-# Create a user: From Overview, "Add New User" (can autogenerate a password, save the password somewhere)
-
-from flask_pymongo import PyMongo
-
-app.config['MONGO_DBNAME'] = 'community-board' # name of database
-app.config['MONGO_URI'] = 'mongodb+srv://admin:6zCs4vJtrzwkLBqL@cluster0-ya1yr.mongodb.net/community-board?retryWrites=true' # Command Line Tools, Connect Instructions, Secure Database (Whitelist IP), connection method (Connect Your Application) > Copy > replace password w/ password
-# same for node.js > 3.0 and Python > 3.6
-
-mongo = PyMongo(app)
-
-# check for connection? (not sure)
 
 # CONNECT TO DB
 
@@ -156,4 +144,3 @@ def myevents():
     events = collection.find({'user' : username})
 
     return render_template('my_events.html', events = events)
-
