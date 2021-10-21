@@ -12,8 +12,8 @@ app = Flask(__name__)
 # set some random secret key for session
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-app.config['MONGO_DBNAME'] = 'community-board' # name of database
-app.config['MONGO_URI'] = 'mongodb+srv://admin:6zCs4vJtrzwkLBqL@cluster0-ya1yr.mongodb.net/community-board?retryWrites=true' # Command Line Tools, Connect Instructions, Secure Database (Whitelist IP), connection method (Connect Your Application) > Copy > replace password w/ password
+app.config['MONGO_DBNAME'] = 'REPLACE-WITH-DATABASE-NAME' # name of database
+app.config['MONGO_URI'] = 'REPLACE-WITH-URI' # Command Line Tools, Connect Instructions, Secure Database (Whitelist IP), connection method (Connect Your Application) > Copy > replace password w/ password
 # same for node.js > 3.0 and Python > 3.6
 
 mongo = PyMongo(app)
